@@ -1,4 +1,4 @@
-# Hotel WebApp
+# Hotel Web App
 ## Available Scripts
 
 In the project directory, you can run:
