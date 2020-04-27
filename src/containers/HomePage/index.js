@@ -13,20 +13,9 @@ const useStyles = makeStyles({
 function Dashboard() {
   const classes = useStyles();
   return (
-    <Layout title='Dashboard'>
+    <Layout >
       <Grid container >
-        <Grid item xs={6} container direction='row'>
-          <PieCard />
-          <PieCard />
-        </Grid>
-        <Grid item xs={6} container direction='row' >
-          <DoughnutCard />
-          <DoughnutCard />
-          <DoughnutCard />
-          <DoughnutCard />
-          <DoughnutCard />
-          <DoughnutCard />
-        </Grid>
+
       </Grid>
     </Layout>
   );
