@@ -64,17 +64,8 @@ function Layout({ children, title }) {
 
   const handleChange = (newValue) => (event) => {
     switch (newValue) {
-      case 'Dashboard':
-        history.push('/dashboard');
-        break;
-      case 'Article':
-        history.push('/article');
-        break;
-      case 'Task':
-        history.push('/task');
-        break;
-      case 'User':
-        history.push('/user');
+      case 'Home':
+        history.push('/home');
         break;
       case 'Account':
         history.push('/account');
@@ -87,30 +78,11 @@ function Layout({ children, title }) {
   return (
     <div className={classes.root}>
       <Grid container direction='column'>
-        <TopBar handleChange={handleChange} value={title} />
-        <Container >
-          <Grid container direction='row' justify='space-between'>
-            <Typography variant='h6' className={classes.subHeader}>
-              {title}
-            </Typography>
-            {
-              title !== 'Dashboard' && title !== 'Setting' ?
-                <Grid item className={classes.actions} >
-                  <IconButton >
-                    <AddIcon />
-                  </IconButton>
-                  <IconButton>
-                    <EditIcon />
-                  </IconButton>
-                  <IconButton>
-                    <ImportIcon />
-                  </IconButton>
-                  <IconButton >
-                    <ExportIcon />
-                  </IconButton>
-                </Grid> : null
-            }
-          </Grid>
+        <TopBar handleChange={handleChange} />
+        <Container>
+          <Typography variant='h6' className={classes.subHeader}>
+            {title}
+          </Typography>
         </Container>
         <Container className={classes.content}>
           {children}

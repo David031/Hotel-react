@@ -58,13 +58,13 @@ export default function LoginPage() {
   const classes = useStyles();
   const history = useHistory();
   const handleChange = (event) => {
-    history.push('/dashboard');
+    history.push('/home');
   };
   return (
     <div className={classes.root}>
       <div>
         <Typography variant='h5' className={classes.title}>
-          TF Admin
+          Easy Hotel
         </Typography>
         <Card className={classes.login} maxWidth='xs'>
           <Typography variant='h6' className={classes.subTitle}>
@@ -97,7 +97,7 @@ export default function LoginPage() {
           </Typography>
         </Card>
         <Typography variant='h6' className={classes.footer} style={{ paddingTop: 8 }}>
-          Copyright © 2020 CHW - TF Admin.
+          Copyright © 2020 Easy Hotel.
         </Typography>
         <Typography variant='h6' className={classes.footer} >
           All rights reserved.

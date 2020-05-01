@@ -28,7 +28,7 @@ export default function BotomBar() {
         <Grid container className={classes.bottomBar} >
             <Container className={classes.footer}>
                 <Typography variant='subtitle2' >
-                    Copyright © 2020 CHW - TF Admin. All rights reserved.
+                    Copyright © 2020 Easy Hotel. All rights reserved.
             </Typography>
             </Container>
         </Grid>

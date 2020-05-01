@@ -1,26 +1,18 @@
 import React from 'react';
-import { makeStyles, Grid } from '@material-ui/core';
+import Typography from '@material-ui/core/Typography';
 import Layout from '../../components/Layout';
 import { BlockLoading } from 'react-loadingg';
-import DoughnutCard from '../../components/DoughnutCard';
-import PieCard from '../../components/PieCard';
 
-const useStyles = makeStyles({
-  root: {
-    color: "#F6F7FB"
-  },
-});
-function Dashboard() {
-  const classes = useStyles();
+function HomePage() {
+
   return (
-    <Layout >
-      <Grid container >
+    <Layout title='Home'>
 
-      </Grid>
+
     </Layout>
   );
 }
 
-Dashboard.propTypes = {};
+HomePage.propTypes = {};
 
-export default Dashboard;
+export default HomePage;
