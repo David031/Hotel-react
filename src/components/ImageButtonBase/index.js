@@ -2,15 +2,13 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
-import CentralAndWesternDistrictView1 from "../../Images/central-and-western-district/central-and-western-district-view-1.jpg";
-
-
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
     flexWrap: 'wrap',
-    minWidth: 300,
+    minWidth: 400,
+    margin: 8
   },
   image: {
     position: 'relative',
@@ -60,7 +58,7 @@ const useStyles = makeStyles((theme) => ({
     top: 0,
     bottom: 0,
     backgroundColor: theme.palette.common.black,
-    opacity: 0.4,
+    opacity: 0.3,
     transition: theme.transitions.create('opacity'),
   },
   imageTitle: {
@@ -78,7 +76,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ImageButtonBase({ style, image }) {
+export default function ImageButtonBase({ image, handleClick }) {
   const classes = useStyles();
 
   return (
@@ -90,7 +88,9 @@ export default function ImageButtonBase({ style, image }) {
         focusVisibleClassName={classes.focusVisible}
         style={{
           width: image.width,
+          height: image.height,
         }}
+        onClick={handleClick}
       >
         <span
           className={classes.imageSrc}

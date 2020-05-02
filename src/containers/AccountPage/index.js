@@ -12,8 +12,8 @@ const useStyles = makeStyles({
 function AccountPage() {
   const classes = useStyles();
   return (
-    <Layout title='Account'>
-      
+    <Layout title='帳戶'>
+      <BlockLoading />
 
     </Layout>
   );
