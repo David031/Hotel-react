@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(3),
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     flexDirection: 'column',
   },
   tabbar: {
@@ -84,7 +84,7 @@ function Layout({ children, title }) {
             {title}
           </Typography>
         </Container>
-        <Container className={classes.content}>
+        <Container className={classes.content} >
           {children}
         </Container>
         <BottomBar />
