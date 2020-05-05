@@ -5,7 +5,7 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
   root: {},
 }));
-export default function HotelRoomCard() {
+export default function HotelRoomCard({ handleClick, price }) {
   const classes = useStyles();
   return (
     <Grid style={{ paddingTop: 5, paddingBottom: 5 }}>
@@ -18,10 +18,12 @@ export default function HotelRoomCard() {
         </Grid>
         <Grid item container xs={4}>
           <Grid item xs={6}>
-            <Typography>HK$ 200</Typography>
+            <Typography>HK$ {price}</Typography>
           </Grid>
           <Grid item xs={6}>
-            <Button variant="outlined">網上預定</Button>
+            <Button variant="outlined" onClick={handleClick}>
+              網上預定
+            </Button>
           </Grid>
         </Grid>
       </Grid>

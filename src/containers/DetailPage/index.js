@@ -3,7 +3,7 @@ import Layout from "../../components/Layout";
 import HotelCard from "../../components/HotelCard";
 import HotelListController from "../../components/HotelListController";
 import { Grid, makeStyles } from "@material-ui/core";
-import { useLocation } from "react-router-dom";
+import { useLocation, useHistory } from "react-router-dom";
 import empirePrestigeTsimShaTsuiView1 from "../../images/tsim-sha-tsui/hotel-images/empire-prestige-tsim-sha-tsui/view1.jpg";
 
 const useStyle = makeStyles((theme) => ({
@@ -20,14 +20,13 @@ function DetailPage() {
   const classes = useStyle();
   const location = useLocation();
   const district = location.state.imagekey;
+  const history = useHistory();
+  if (!district) {
+    history.push("/error");
+  }
   return (
     <Layout title={`酒店選擇 : ${district}`}>
-      <Grid
-        container
-        alignContent="flex-start"
-        alignItems="flex-start"
-        justify="space-around"
-      >
+      <Grid container alignContent="flex-start" alignItems="flex-start" justify="space-around">
         <Grid item>
           <HotelCard district={district} hotel={hotel} />
         </Grid>

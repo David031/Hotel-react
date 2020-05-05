@@ -1,13 +1,13 @@
-
-import React from 'react';
-import { Switch, Route, BrowserRouter } from 'react-router-dom';
-import LoginPage from '../LoginPage';
-import HomePage from '../HomePage';
-import AccountPage from '../AccountPage';
-import NotFoundPage from '../NotFoundPage';
-import DetailPage from '../DetailPage';
-import HotelDetailPage from '../HotelDetailPage';
-import Testing from '../Testing';
+import React from "react";
+import { Switch, Route, BrowserRouter } from "react-router-dom";
+import LoginPage from "../LoginPage";
+import HomePage from "../HomePage";
+import AccountPage from "../AccountPage";
+import NotFoundPage from "../NotFoundPage";
+import DetailPage from "../DetailPage";
+import HotelDetailPage from "../HotelDetailPage";
+import HotelOrderPage from "../HotelOrderPage";
+import Testing from "../Testing";
 export default function Router() {
   return (
     <BrowserRouter>
@@ -19,6 +19,7 @@ export default function Router() {
         <Route exact path="/login" component={LoginPage} />
         <Route exact path="/detail" component={DetailPage} />
         <Route exact path="/detail/hotel" component={HotelDetailPage} />
+        <Route exact path="/detail/hotel/order" component={HotelOrderPage} />
         <Route component={NotFoundPage} />
       </Switch>
     </BrowserRouter>

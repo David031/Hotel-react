@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import Layout from "../../components/Layout";
-import { Grid, makeStyles, Card, Typography, Button, TextField } from "@material-ui/core";
+import { Grid, makeStyles, Card, Typography, Button, TextField, LinearProgress } from "@material-ui/core";
 import muiDayjs from "@date-io/dayjs";
 import dayjs from "dayjs";
 import { DatePicker, MuiPickersUtilsProvider } from "@material-ui/pickers";
-import { useLocation } from "react-router-dom";
 import HotelRoomCard from "../../components/HotelRoomCard";
 import { heatFacility, network, customerService, mealService, normalFacility, reminder } from "./constants";
 import { RiVisaLine } from "react-icons/ri";
 import { FaCcMastercard } from "react-icons/fa";
+import { Map } from "react-amap";
+import Marker from "react-amap/lib/marker";
+import { useHistory, useLocation } from "react-router-dom";
 import empirePrestigeTsimShaTsuiView1 from "../../images/tsim-sha-tsui/hotel-images/empire-prestige-tsim-sha-tsui/view1.jpg";
 
 const useStyle = makeStyles((theme) => ({
@@ -52,17 +54,28 @@ const useStyle = makeStyles((theme) => ({
   },
 }));
 
-function HotelDetailPage() {
+function HotelDetailPage(props) {
   const now = dayjs();
   const [startDate, setStartDate] = useState(now);
   const [endDate, setEndDate] = useState(startDate.add(1, "day"));
+  const [people, setPeople] = useState(1);
+  const [room, setRoom] = useState(1);
   const classes = useStyle();
+  const history = useHistory();
   const location = useLocation();
   const district = location.state.district;
   const hotel = location.state.hotel;
-  const onChange = (event) => {
-    console.log(startDate);
-    console.log(event);
+  if (!district || !hotel) {
+    history.push("/error");
+  }
+  const handleClick = (order) => () => {
+    history.push("/detail/hotel/order", { order: order, hotel: hotel, district: district });
+  };
+  const handlePeopleChange = (event) => {
+    setPeople(event.target.value);
+  };
+  const handleRoomChange = (event) => {
+    setRoom(event.target.value);
   };
   return (
     <Layout title={`酒店 : ${district} - ${hotel.titleChi}`}>
@@ -78,7 +91,11 @@ function HotelDetailPage() {
             <Typography variant="h5" style={{ marginTop: 10 }}>
               HK$258
             </Typography>
-            <Button variant="outlined" className={classes.btn}>
+            <Button
+              variant="outlined"
+              className={classes.btn}
+              onClick={handleClick({ price: 258, startDate: dayjs(startDate).format("DD/MM/YYYY"), endDate: dayjs(endDate).format("DD/MM/YYYY"), people: people, room: room, day: endDate.diff(startDate, "d") })}
+            >
               立即訂房
             </Button>
           </Grid>
@@ -118,7 +135,8 @@ function HotelDetailPage() {
             <TextField
               label="人數"
               type="number"
-              defaultValue={1}
+              value={people}
+              onChange={handlePeopleChange}
               margin="normal"
               className={classes.textField}
               InputLabelProps={{
@@ -130,7 +148,8 @@ function HotelDetailPage() {
               label="房間數量"
               type="number"
               margin="normal"
-              defaultValue={1}
+              value={room}
+              onChange={handleRoomChange}
               className={classes.textField}
               InputLabelProps={{
                 shrink: true,
@@ -168,8 +187,8 @@ function HotelDetailPage() {
             <Typography style={{ marginTop: 15 }}>城市景觀客房</Typography>
           </Grid>
           <Grid item container direction="column" xs={9}>
-            <HotelRoomCard />
-            <HotelRoomCard />
+            <HotelRoomCard price={258} handleClick={handleClick({ price: 258, startDate: dayjs(startDate).format("DD/MM/YYYY"), endDate: dayjs(endDate).format("DD/MM/YYYY"), people: people, room: room, day: endDate.diff(startDate, "d") })} />
+            <HotelRoomCard price={300} handleClick={handleClick({ price: 300, startDate: dayjs(startDate).format("DD/MM/YYYY"), endDate: dayjs(endDate).format("DD/MM/YYYY"), people: people, room: room, day: endDate.diff(startDate, "d") })} />
           </Grid>
         </Grid>
         <Grid container className={classes.content} style={{ height: 500 }}>
@@ -482,11 +501,74 @@ function HotelDetailPage() {
             </Grid>
           </Grid>
         </Grid>
-        <Grid container className={classes.content} style={{ height: 500 }}>
-          <Typography variant="h6">地圖</Typography>
+        <Grid container className={classes.content}>
+          <Typography variant="h6" className={classes.serviceLabelTitle}>
+            地圖
+          </Typography>
+          <Grid container direction="row" className={classes.service}>
+            <Grid item xs={8}>
+              <div style={{ width: "100%", height: 300 }}>
+                <Map amapkey={"2cbb42b51bcddeda26d5492226150c3c"} version="2.0" doubleClickZoom zoom={13} center={{ longitude: 114.15769, latitude: 22.28552 }}>
+                  <Marker position={{ longitude: 114.15769, latitude: 22.28552 }} />
+                </Map>
+              </div>
+            </Grid>
+            <Grid item xs={4} style={{ padding: 10 }}>
+              <Typography variant="h6">香港尖沙咀皇悦酒店</Typography>
+              <Typography variant="h6">(Empire Hotel Kowloon－Tsim Sha Tsui)</Typography>
+              <Typography variant="subtitle1"> 尖沙咀-油尖旺尖沙咀金巴利街8號。</Typography>
+            </Grid>
+          </Grid>
         </Grid>
-        <Grid container className={classes.content} style={{ height: 500 }}>
-          <Typography variant="h6">評價</Typography>
+        <Grid container className={classes.content} style={{ marginBottom: 100 }}>
+          <Typography variant="h6" className={classes.serviceLabelTitle}>
+            評價
+          </Typography>
+          <Grid container direction="row" justify="center">
+            <Grid item xs={4} style={{ padding: 20 }} container direction="column" justify="center">
+              <Grid item xs={3}>
+                <Typography variant="h5" style={{ paddingLeft: 10 }}>
+                  滿意
+                </Typography>
+              </Grid>
+              <Grid item xs={4} container direction="row" alignItems="flex-end">
+                <Typography variant="h3">4.5</Typography>
+                <Typography variant="h4">/5</Typography>
+              </Grid>
+            </Grid>
+            <Grid item xs={3} style={{ padding: 20 }}>
+              <Grid style={{ padding: 15 }}>
+                <Grid item direction="row" container justify="space-between">
+                  <Typography variant="body1">位置</Typography>
+                  <Typography variant="body1">4.5</Typography>
+                </Grid>
+                <LinearProgress variant="determinate" value={90} />
+              </Grid>
+              <Grid style={{ padding: 15 }}>
+                <Grid item direction="row" container justify="space-between">
+                  <Typography variant="body1">服務</Typography>
+                  <Typography variant="body1">4.5</Typography>
+                </Grid>
+                <LinearProgress variant="determinate" value={90} />
+              </Grid>
+            </Grid>
+            <Grid item xs={3} style={{ padding: 20 }}>
+              <Grid style={{ padding: 15 }}>
+                <Grid item direction="row" container justify="space-between">
+                  <Typography variant="body1">清潔度</Typography>
+                  <Typography variant="body1">4.5</Typography>
+                </Grid>
+                <LinearProgress variant="determinate" value={90} />
+              </Grid>
+              <Grid style={{ padding: 15 }}>
+                <Grid item direction="row" container justify="space-between">
+                  <Typography variant="body1">設施</Typography>
+                  <Typography variant="body1">4.5</Typography>
+                </Grid>
+                <LinearProgress variant="determinate" value={90} />
+              </Grid>
+            </Grid>
+          </Grid>
         </Grid>
       </Card>
     </Layout>
