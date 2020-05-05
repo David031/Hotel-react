@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  makeStyles,
-  Card,
-  Button,
-  Typography,
-  Grid,
-  CardMedia,
-} from "@material-ui/core";
+import { makeStyles, Card, Button, Typography, Grid, CardMedia } from "@material-ui/core";
 import { useHistory } from "react-router-dom";
 
 const useStyle = makeStyles((theme) => ({
@@ -33,20 +26,16 @@ const useStyle = makeStyles((theme) => ({
   },
 }));
 
-function HotelCard({ district, hotel }) {
+function HotelCard({ district, hotel, hotelNotFound }) {
   const classes = useStyle();
   const history = useHistory();
-  const handleClick = (newValue) => (event) => {
-    history.push("/detail/hotel", { hotel: newValue, district: district });
+  const handleClick = () => {
+    history.push("/detail/hotel", { hotel: hotel, district: district });
   };
-  return (
+  return !hotelNotFound ? (
     <Card className={classes.root}>
       <Grid container direction="row" style={{ padding: 15 }}>
-        <CardMedia
-          className={classes.image}
-          image={hotel.image}
-          title={hotel.title}
-        />
+        <CardMedia className={classes.image} image={hotel.images[0]} title={hotel.title} />
         <Grid item className={classes.content}>
           <Typography variant="h6">{hotel.titleChi}</Typography>
           <Typography variant="subtitle1">{hotel.titleEn}</Typography>
@@ -59,14 +48,16 @@ function HotelCard({ district, hotel }) {
               起
             </Typography>
           </Grid>
-          <Button
-            variant="outlined"
-            className={classes.infoBtn}
-            onClick={handleClick(hotel)}
-          >
+          <Button variant="outlined" className={classes.infoBtn} onClick={handleClick}>
             查看詳情
           </Button>
         </Grid>
+      </Grid>
+    </Card>
+  ) : (
+    <Card className={classes.root}>
+      <Grid container justify="center" alignContent="center" alignItems="center" style={{ height: "100%" }}>
+        <Typography variant="h5">沒有找到合適的酒店</Typography>
       </Grid>
     </Card>
   );

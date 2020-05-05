@@ -33,6 +33,7 @@ export default function HotelOrderPage() {
   const order = location.state.order;
   const totalRoomPrice = order.room * order.price * order.day;
   const totalPrice = totalRoomPrice + totalRoomPrice * 0.1;
+
   if (!district || !hotel || !order) {
     history.push("/error");
   }
@@ -40,7 +41,39 @@ export default function HotelOrderPage() {
   for (let index = 0; index < order.people; index++) {
     rows.push(index);
   }
-
+  const [roomPeople, setRoomPeople] = React.useState(rows.map((r) => ({ lastName: "", firstName: "" })));
+  const [contact, setContact] = React.useState({ email: "", mobile: "" });
+  const handleClick = () => {
+    history.push("/detail/hotel/order/pay", { order: order, price: totalPrice, hotel: hotel, contact: contact, roomPeople: roomPeople });
+  };
+  const handleLastNameChange = (index) => (event) => {
+    setRoomPeople(
+      roomPeople.map((r, i) => {
+        if (i == index) {
+          return { ...r, lastName: event.target.value };
+        } else {
+          return r;
+        }
+      })
+    );
+  };
+  const handleFirstNameChange = (index) => (event) => {
+    setRoomPeople(
+      roomPeople.map((r, i) => {
+        if (i == index) {
+          return { ...r, firstName: event.target.value };
+        } else {
+          return r;
+        }
+      })
+    );
+  };
+  const handleEmailChange = (event) => {
+    setContact({ ...contact, email: event.target.value });
+  };
+  const handleMobileChange = (event) => {
+    setContact({ ...contact, mobile: event.target.value });
+  };
   return (
     <Layout title={`預定酒店 : ${district} - ${hotel.titleChi}`}>
       <Grid container direction="row">
@@ -72,6 +105,8 @@ export default function HotelOrderPage() {
                       label="姓氏"
                       type="text"
                       margin="normal"
+                      value={roomPeople[r].lastName}
+                      onChange={handleLastNameChange(r)}
                       InputLabelProps={{
                         shrink: true,
                       }}
@@ -81,6 +116,8 @@ export default function HotelOrderPage() {
                       label="名字"
                       type="text"
                       margin="normal"
+                      value={roomPeople[r].firstName}
+                      onChange={handleFirstNameChange(r)}
                       InputLabelProps={{
                         shrink: true,
                       }}
@@ -97,6 +134,8 @@ export default function HotelOrderPage() {
                   label="電郵"
                   type="email"
                   margin="normal"
+                  value={contact.email}
+                  onChange={handleEmailChange}
                   InputLabelProps={{
                     shrink: true,
                   }}
@@ -106,6 +145,8 @@ export default function HotelOrderPage() {
                   label="電話號碼"
                   type="mobile"
                   margin="normal"
+                  onChange={handleMobileChange}
+                  value={contact.mobile}
                   InputLabelProps={{
                     shrink: true,
                   }}
@@ -137,10 +178,10 @@ export default function HotelOrderPage() {
               </Grid>
               <Grid item className={classes.pay} container direction="row" alignItems="center" justify="space-between">
                 <Grid item container direction="row" xs={4} alignItems="center">
-                  <Typography variant="suntitle2">網上預付</Typography>
+                  <Typography variant="subtitle2">網上預付</Typography>
                   <Typography variant="h5">HK${totalPrice}</Typography>
                 </Grid>
-                <Button variant="outlined" className={classes.payBtn}>
+                <Button variant="outlined" className={classes.payBtn} onClick={handleClick}>
                   <Typography variant="h6">預訂</Typography>
                 </Button>
               </Grid>

@@ -7,6 +7,8 @@ import NotFoundPage from "../NotFoundPage";
 import DetailPage from "../DetailPage";
 import HotelDetailPage from "../HotelDetailPage";
 import HotelOrderPage from "../HotelOrderPage";
+import PaymentPage from "../PaymentPage";
+import PaymentDonePage from "../PaymentDonePage";
 import Testing from "../Testing";
 export default function Router() {
   return (
@@ -20,6 +22,8 @@ export default function Router() {
         <Route exact path="/detail" component={DetailPage} />
         <Route exact path="/detail/hotel" component={HotelDetailPage} />
         <Route exact path="/detail/hotel/order" component={HotelOrderPage} />
+        <Route exact path="/detail/hotel/order/pay" component={PaymentPage} />
+        <Route exact path="/detail/hotel/order/pay/done" component={PaymentDonePage} />
         <Route component={NotFoundPage} />
       </Switch>
     </BrowserRouter>

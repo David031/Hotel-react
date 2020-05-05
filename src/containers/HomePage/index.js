@@ -4,7 +4,7 @@ import ImageButtonBase from "../../components/ImageButtonBase";
 import Layout from "../../components/Layout";
 import { Grid } from "@material-ui/core";
 import { BlockLoading } from "react-loadingg";
-import { images } from "./constants";
+import { districts } from "../../data";
 import { useHistory } from "react-router-dom";
 function HomePage() {
   const history = useHistory();
@@ -14,12 +14,8 @@ function HomePage() {
   return (
     <Layout title="區域選擇">
       <Grid container justify="center">
-        {images.map((image) => (
-          <ImageButtonBase
-            key={image.key}
-            image={image}
-            handleClick={handleClick(image.key)}
-          />
+        {districts.map((image) => (
+          <ImageButtonBase key={image.key} image={image} handleClick={handleClick(image.key)} />
         ))}
       </Grid>
     </Layout>

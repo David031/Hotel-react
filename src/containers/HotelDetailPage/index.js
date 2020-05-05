@@ -6,8 +6,7 @@ import dayjs from "dayjs";
 import { DatePicker, MuiPickersUtilsProvider } from "@material-ui/pickers";
 import HotelRoomCard from "../../components/HotelRoomCard";
 import { heatFacility, network, customerService, mealService, normalFacility, reminder } from "./constants";
-import { RiVisaLine } from "react-icons/ri";
-import { FaCcMastercard } from "react-icons/fa";
+import { payIcon } from "../PaymentPage/constants";
 import { Map } from "react-amap";
 import Marker from "react-amap/lib/marker";
 import { useHistory, useLocation } from "react-router-dom";
@@ -42,6 +41,7 @@ const useStyle = makeStyles((theme) => ({
     marginBottom: 15,
   },
   serviceLabel: {
+    marginLeft: 15,
     marginRight: 15,
     paddingBottom: 25,
   },
@@ -51,6 +51,12 @@ const useStyle = makeStyles((theme) => ({
   policyTag: {
     marginTop: 16,
     marginBottom: 32,
+  },
+  icon: {
+    marginTop: 3,
+    marginRight: 5,
+    height: 30,
+    width: 50,
   },
 }));
 
@@ -89,40 +95,63 @@ function HotelDetailPage(props) {
           </Grid>
           <Grid item xs={1}>
             <Typography variant="h5" style={{ marginTop: 10 }}>
-              HK$258
+              HK${hotel.price}
             </Typography>
             <Button
               variant="outlined"
               className={classes.btn}
-              onClick={handleClick({ price: 258, startDate: dayjs(startDate).format("DD/MM/YYYY"), endDate: dayjs(endDate).format("DD/MM/YYYY"), people: people, room: room, day: endDate.diff(startDate, "d") })}
+              onClick={handleClick({ price: hotel.price, startDate: dayjs(startDate).format("DD/MM/YYYY"), endDate: dayjs(endDate).format("DD/MM/YYYY"), people: people, room: room, day: endDate.diff(startDate, "d") })}
             >
               立即訂房
             </Button>
           </Grid>
         </Grid>
         <Grid container className={classes.content} justify="center">
-          <img src={empirePrestigeTsimShaTsuiView1} alt="empirePrestigeTsimShaTsuiView1" style={{ margin: 5 }} />
-          <img src={empirePrestigeTsimShaTsuiView1} alt="empirePrestigeTsimShaTsuiView1" style={{ margin: 5 }} />
-          <img src={empirePrestigeTsimShaTsuiView1} alt="empirePrestigeTsimShaTsuiView1" style={{ margin: 5 }} />
-          <img src={empirePrestigeTsimShaTsuiView1} alt="empirePrestigeTsimShaTsuiView1" style={{ margin: 5 }} />
-          <img src={empirePrestigeTsimShaTsuiView1} alt="empirePrestigeTsimShaTsuiView1" style={{ margin: 5 }} />
-          <img src={empirePrestigeTsimShaTsuiView1} alt="empirePrestigeTsimShaTsuiView1" style={{ margin: 5 }} />
-          <img src={empirePrestigeTsimShaTsuiView1} alt="empirePrestigeTsimShaTsuiView1" style={{ margin: 5 }} />
-          <img src={empirePrestigeTsimShaTsuiView1} alt="empirePrestigeTsimShaTsuiView1" style={{ margin: 5 }} />
-          <img src={empirePrestigeTsimShaTsuiView1} alt="empirePrestigeTsimShaTsuiView1" style={{ margin: 5 }} />
-          <img src={empirePrestigeTsimShaTsuiView1} alt="empirePrestigeTsimShaTsuiView1" style={{ margin: 5 }} />
+          {hotel.images.map((img, index) => (
+            <img key={index} src={img} alt={index} style={{ margin: 5 }} />
+          ))}
         </Grid>
-        <Grid container direction="row" className={classes.content} style={{ height: 350 }}>
+        <Grid container direction="row" className={classes.content}>
           <Grid item xs={8} container direction="column" alignContent="flex-start" alignItems="flex-start" justify="flex-start">
-            <Grid item style={{ height: 150 }}>
-              <Typography variant="h6">酒店評價</Typography>
-            </Grid>
-            <Grid item style={{ height: 150 }}>
-              <Typography variant="h6">熱門設施</Typography>
+            <Grid item container direction="column">
+              <Typography variant="h6" className={classes.serviceLabelTitle}>
+                酒店評價
+              </Typography>
+              <Grid item container style={{ paddingBottom: 25, paddingLeft: 40, paddingTop: 10 }}>
+                <Grid item xs={3}>
+                  <Typography variant="h5">滿意</Typography>
+                </Grid>
+                <Grid item container direction="row" alignItems="center">
+                  <Typography variant="h3">4.5</Typography>
+                  <Typography variant="h4">/5</Typography>
+                </Grid>
+              </Grid>
+              <Grid item>
+                <Typography variant="h6" className={classes.serviceLabelTitle}>
+                  熱門設施
+                </Typography>
+                <Grid container direction="row">
+                  {heatFacility.map((f, index) =>
+                    index < 9 ? (
+                      <Grid key={f.label} container direction="row" style={{ width: 220 }}>
+                        <f.icon size="1.4em" className={classes.serviceLabel} fontSize="small" />
+                        <Typography variant="subtitle2">{f.label}</Typography>
+                      </Grid>
+                    ) : null
+                  )}
+                </Grid>
+              </Grid>
             </Grid>
           </Grid>
           <Grid item xs={4}>
-            <Typography variant="h6">酒店地圖</Typography>
+            <Typography variant="h6" className={classes.serviceLabelTitle}>
+              酒店地圖
+            </Typography>
+            <div style={{ width: 320, height: 300 }}>
+              <Map amapkey={"2cbb42b51bcddeda26d5492226150c3c"} version="2.0" doubleClickZoom zoom={13} center={{ longitude: 114.15769, latitude: 22.28552 }}>
+                <Marker position={{ longitude: 114.15769, latitude: 22.28552 }} />
+              </Map>
+            </div>
           </Grid>
         </Grid>
         <Grid className={classes.content}>
@@ -187,8 +216,14 @@ function HotelDetailPage(props) {
             <Typography style={{ marginTop: 15 }}>城市景觀客房</Typography>
           </Grid>
           <Grid item container direction="column" xs={9}>
-            <HotelRoomCard price={258} handleClick={handleClick({ price: 258, startDate: dayjs(startDate).format("DD/MM/YYYY"), endDate: dayjs(endDate).format("DD/MM/YYYY"), people: people, room: room, day: endDate.diff(startDate, "d") })} />
-            <HotelRoomCard price={300} handleClick={handleClick({ price: 300, startDate: dayjs(startDate).format("DD/MM/YYYY"), endDate: dayjs(endDate).format("DD/MM/YYYY"), people: people, room: room, day: endDate.diff(startDate, "d") })} />
+            <HotelRoomCard
+              price={hotel.price}
+              handleClick={handleClick({ price: hotel.price, startDate: dayjs(startDate).format("DD/MM/YYYY"), endDate: dayjs(endDate).format("DD/MM/YYYY"), people: people, room: room, day: endDate.diff(startDate, "d") })}
+            />
+            <HotelRoomCard
+              price={hotel.price + 10}
+              handleClick={handleClick({ price: hotel.price + 10, startDate: dayjs(startDate).format("DD/MM/YYYY"), endDate: dayjs(endDate).format("DD/MM/YYYY"), people: people, room: room, day: endDate.diff(startDate, "d") })}
+            />
           </Grid>
         </Grid>
         <Grid container className={classes.content} style={{ height: 500 }}>
@@ -493,10 +528,13 @@ function HotelDetailPage(props) {
               <Typography variant="subtitle2">酒店付款方式</Typography>
             </Grid>
             <Grid container direction="column" item xs={9}>
-              <Typography variant="subtitle2">酒店接受以下付款方式</Typography>
+              <Typography variant="subtitle2" style={{ marginBottom: 10 }}>
+                酒店接受以下付款方式
+              </Typography>
               <Grid container>
-                <RiVisaLine size="2.8em" style={{ marginRight: 20 }} />
-                <FaCcMastercard size="2.8em" />
+                {payIcon.map((payico, index) => (
+                  <img key={index} src={payico} alt={index} className={classes.icon} />
+                ))}
               </Grid>
             </Grid>
           </Grid>

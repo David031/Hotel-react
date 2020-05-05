@@ -4,34 +4,31 @@ import HotelCard from "../../components/HotelCard";
 import HotelListController from "../../components/HotelListController";
 import { Grid, makeStyles } from "@material-ui/core";
 import { useLocation, useHistory } from "react-router-dom";
-import empirePrestigeTsimShaTsuiView1 from "../../images/tsim-sha-tsui/hotel-images/empire-prestige-tsim-sha-tsui/view1.jpg";
+import { hotels, districts } from "../../data";
 
 const useStyle = makeStyles((theme) => ({
   root: {},
 }));
-const hotel = {
-  image: empirePrestigeTsimShaTsuiView1,
-  titleChi: "香港皇悦卓越酒店(尖沙咀店) ",
-  titleEn: "Empire Prestige Tsim Sha Tsui",
-  address: "尖沙咀-油尖旺尖沙咀金巴利街8號。 ",
-  price: 700,
-};
+
 function DetailPage() {
   const classes = useStyle();
   const location = useLocation();
-  const district = location.state.imagekey;
   const history = useHistory();
-  if (!district) {
-    history.push("/error");
-  }
+  const [district, setDistrict] = React.useState(location.state.imagekey);
+  const [hotel, sethotel] = React.useState(
+    hotels.map((h) => {
+      if (h.district == district) {
+        return h;
+      }
+    })
+  );
+
   return (
     <Layout title={`酒店選擇 : ${district}`}>
       <Grid container alignContent="flex-start" alignItems="flex-start" justify="space-around">
+        <Grid item>{hotel[0] ? hotel.map((h) => (h ? <HotelCard district={district} hotel={h} /> : null)) : <HotelCard hotelNotFound />}</Grid>
         <Grid item>
-          <HotelCard district={district} hotel={hotel} />
-        </Grid>
-        <Grid>
-          <HotelListController />
+          <HotelListController hotels={hotels} sethotel={sethotel} setDistrict={setDistrict} districts={districts} district={district} />
         </Grid>
       </Grid>
     </Layout>
