@@ -1,15 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Typography, Container, Grid, IconButton } from "@material-ui/core";
+import { Typography, Container, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { useHistory } from "react-router-dom";
 import TopBar from "../TopBar";
 import BottomBar from "../BottomBar";
-import DeleteIcon from "@material-ui/icons/Delete";
-import AddIcon from "@material-ui/icons/Add";
-import EditIcon from "@material-ui/icons/Edit";
-import ImportIcon from "@material-ui/icons/Publish";
-import ExportIcon from "@material-ui/icons/GetApp";
 const useStyles = makeStyles((theme) => ({
   root: {
     minHeight: "100vh",

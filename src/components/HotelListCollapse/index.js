@@ -1,22 +1,22 @@
-import React from 'react';
-import clsx from 'clsx';
-import { makeStyles, Card, CardContent, Typography, Grid, CardActions, IconButton, Collapse } from "@material-ui/core";
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import React from "react";
+import clsx from "clsx";
+import { makeStyles, Typography, CardActions, IconButton, Collapse } from "@material-ui/core";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 const useStyle = makeStyles((theme) => ({
   root: {
     width: 360,
-    marginTop: 15
+    marginTop: 15,
   },
   expand: {
-    transform: 'rotate(0deg)',
-    marginLeft: 'auto',
-    transition: theme.transitions.create('transform', {
+    transform: "rotate(0deg)",
+    marginLeft: "auto",
+    transition: theme.transitions.create("transform", {
       duration: theme.transitions.duration.shortest,
     }),
   },
   expandOpen: {
-    transform: 'rotate(180deg)',
+    transform: "rotate(180deg)",
   },
 }));
 
@@ -29,7 +29,7 @@ function HotelListCollapse({ title, children }) {
   return (
     <div>
       <CardActions disableSpacing>
-        <Typography >{title}</Typography>
+        <Typography>{title}</Typography>
         <IconButton
           className={clsx(classes.expand, {
             [classes.expandOpen]: expanded,
@@ -45,7 +45,6 @@ function HotelListCollapse({ title, children }) {
         {children}
       </Collapse>
     </div>
-
   );
 }
 export default HotelListCollapse;

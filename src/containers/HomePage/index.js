@@ -1,9 +1,7 @@
 import React from "react";
-import Typography from "@material-ui/core/Typography";
 import ImageButtonBase from "../../components/ImageButtonBase";
 import Layout from "../../components/Layout";
 import { Grid } from "@material-ui/core";
-import { BlockLoading } from "react-loadingg";
 import { districts } from "../../data";
 import { useHistory } from "react-router-dom";
 function HomePage() {

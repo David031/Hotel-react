@@ -1,10 +1,9 @@
 import React from "react";
-import { Typography, Container, TextField, Grid, Button, Card } from "@material-ui/core";
+import { Typography, TextField, Grid, Button, Card } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import LockIcon from "@material-ui/icons/Lock";
 import { useHistory } from "react-router-dom";
-const spacing = 10;
 const useStyles = makeStyles((theme) => ({
   root: {
     minHeight: "100vh",

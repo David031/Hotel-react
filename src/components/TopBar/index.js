@@ -83,7 +83,6 @@ export default function TopBar({ handleChange }) {
       <Container className={classes.navBar}>
         <Grid container direction="row" justify="center">
           <Typography variant="subtitle1" style={{ margin: 10 }}>
-            {" "}
             最新推廣 ： 香港半島酒店消費滿HKD 10000，立減HKD 10 ～～
           </Typography>
           <Button onClick={handleClick({ hotel: hotels[13], district: hotels[13].district })} className={classes.tabNormal} endIcon={<ArrowRightIcon />}>

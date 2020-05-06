@@ -49,7 +49,7 @@ export default function HotelOrderPage() {
   const handleLastNameChange = (index) => (event) => {
     setRoomPeople(
       roomPeople.map((r, i) => {
-        if (i == index) {
+        if (i === index) {
           return { ...r, lastName: event.target.value };
         } else {
           return r;
@@ -60,7 +60,7 @@ export default function HotelOrderPage() {
   const handleFirstNameChange = (index) => (event) => {
     setRoomPeople(
       roomPeople.map((r, i) => {
-        if (i == index) {
+        if (i === index) {
           return { ...r, firstName: event.target.value };
         } else {
           return r;

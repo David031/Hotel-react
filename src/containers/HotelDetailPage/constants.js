@@ -1,4 +1,4 @@
-import { AiOutlineWifi, AiOutlineCheckCircle } from "react-icons/ai";
+import { AiOutlineWifi } from "react-icons/ai";
 import { BsCheckCircle, BsAlarm } from "react-icons/bs";
 import { WorkOutline, PeopleOutline } from "@material-ui/icons";
 import { MdLocalBar, MdRestaurant, MdSmokeFree } from "react-icons/md";

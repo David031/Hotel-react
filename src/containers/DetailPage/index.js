@@ -2,18 +2,12 @@ import React from "react";
 import Layout from "../../components/Layout";
 import HotelCard from "../../components/HotelCard";
 import HotelListController from "../../components/HotelListController";
-import { Grid, makeStyles } from "@material-ui/core";
-import { useLocation, useHistory } from "react-router-dom";
+import { Grid } from "@material-ui/core";
+import { useLocation } from "react-router-dom";
 import { hotels, districts } from "../../data";
 
-const useStyle = makeStyles((theme) => ({
-  root: {},
-}));
-
 function DetailPage() {
-  const classes = useStyle();
   const location = useLocation();
-  const history = useHistory();
   const [district, setDistrict] = React.useState(location.state.imagekey);
   const [hotel, sethotel] = React.useState(hotels.filter((h) => h.district === district));
   return (

@@ -1,11 +1,4 @@
-import { AiOutlineWifi, AiOutlineCheckCircle, AiOutlineExclamationCircle } from "react-icons/ai";
-import { BsCheckCircle, BsAlar, BsExclamationCircle } from "react-icons/bs";
-import { WorkOutline, PeopleOutline } from "@material-ui/icons";
-import { MdLocalBar, MdRestaurant, MdSmokeFree } from "react-icons/md";
-import { FaSwimmingPool, FaLuggageCart } from "react-icons/fa";
-import { FiCoffee } from "react-icons/fi";
-import { RiExchangeDollarLine } from "react-icons/ri";
-import { GiWineGlass, GiRunningShoe, GiStairs } from "react-icons/gi";
+import { AiOutlineExclamationCircle } from "react-icons/ai";
 export const orderReminder = [
   {
     icon: AiOutlineExclamationCircle,

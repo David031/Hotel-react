@@ -1,5 +1,5 @@
 import React from "react";
-import { makeStyles, Card, Button, Typography, Grid, CardMedia } from "@material-ui/core";
+import { makeStyles, Card, Button, Typography, Grid } from "@material-ui/core";
 import { useHistory } from "react-router-dom";
 import { heatFacility } from "../../containers/HotelDetailPage/constants";
 const useStyle = makeStyles((theme) => ({
@@ -36,7 +36,7 @@ function HotelCard({ district, hotel, hotelNotFound }) {
     <Card className={classes.root}>
       <Grid container direction="row" style={{ padding: 15 }}>
         <Grid item xs={4} style={{ height: 260 }}>
-          <img src={hotel.images[0]} style={{ width: "100%", height: "100%" }}></img>
+          <img alt="hotelImage" src={hotel.images[0]} style={{ width: "100%", height: "100%" }}></img>
         </Grid>
         <Grid item xs={5} style={{ paddingLeft: 15 }}>
           <Typography variant="h6">{hotel.titleChi}</Typography>

@@ -1,9 +1,7 @@
 import React from "react";
-import clsx from "clsx";
-import { makeStyles, Card, CardContent, Typography, Grid, CardActions, Button } from "@material-ui/core";
+import { makeStyles, Card, Typography, Grid, Button } from "@material-ui/core";
 import { starLv } from "./constants";
 import HotelListCollapse from "../HotelListCollapse";
-import { useHistory } from "react-router-dom";
 const useStyle = makeStyles((theme) => ({
   root: {
     width: 360,
@@ -23,13 +21,12 @@ const useStyle = makeStyles((theme) => ({
 
 function HotelListController({ hotels, sethotel, setDistrict, districts, district }) {
   const classes = useStyle();
-  const history = useHistory();
   const handleClick = (newDistrict) => (event) => {
     setDistrict(newDistrict);
     sethotel(hotels.filter((h) => h.district === newDistrict));
   };
   const handleStarClick = (newStar) => (event) => {
-    sethotel(hotels.filter((h) => h.star === newStar && h.district == district));
+    sethotel(hotels.filter((h) => h.star === newStar && h.district === district));
   };
   return (
     <Card className={classes.root}>

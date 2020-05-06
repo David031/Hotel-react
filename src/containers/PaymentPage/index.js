@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, makeStyles, Card, Typography, Button, TextField, LinearProgress } from "@material-ui/core";
+import { Grid, makeStyles, Card, Typography, Button, TextField } from "@material-ui/core";
 import Layout from "../../components/Layout";
 import { payIcon } from "./constants";
 import { useHistory, useLocation } from "react-router-dom";

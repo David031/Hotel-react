@@ -1,20 +1,11 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core';
-import Layout from '../../components/Layout';
-import { BlockLoading } from 'react-loadingg';
-
-const useStyles = makeStyles({
-  loading: {
-    color: "#F6F7FB"
-  },
-});
+import React from "react";
+import Layout from "../../components/Layout";
+import { BlockLoading } from "react-loadingg";
 
 function AccountPage() {
-  const classes = useStyles();
   return (
-    <Layout title='帳戶'>
+    <Layout title="帳戶">
       <BlockLoading />
-
     </Layout>
   );
 }
