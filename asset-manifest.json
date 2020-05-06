@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/Hotel-react/static/css/main.5f361e03.chunk.css",
+    "main.js": "/Hotel-react/static/js/main.092c008c.chunk.js",
+    "main.js.map": "/Hotel-react/static/js/main.092c008c.chunk.js.map",
+    "runtime-main.js": "/Hotel-react/static/js/runtime-main.f65433f3.js",
+    "runtime-main.js.map": "/Hotel-react/static/js/runtime-main.f65433f3.js.map",
+    "static/js/2.9ef8a80c.chunk.js": "/Hotel-react/static/js/2.9ef8a80c.chunk.js",
+    "static/js/2.9ef8a80c.chunk.js.map": "/Hotel-react/static/js/2.9ef8a80c.chunk.js.map",
+    "index.html": "/Hotel-react/index.html",
+    "precache-manifest.529751d9dfbcad016d57e39f4dbce50f.js": "/Hotel-react/precache-manifest.529751d9dfbcad016d57e39f4dbce50f.js",
+    "service-worker.js": "/Hotel-react/service-worker.js",
+    "static/css/main.5f361e03.chunk.css.map": "/Hotel-react/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.9ef8a80c.chunk.js.LICENSE.txt": "/Hotel-react/static/js/2.9ef8a80c.chunk.js.LICENSE.txt",
+    "static/media/view1.jpg": "/Hotel-react/static/media/view1.fedc6403.jpg",
+    "static/media/view1.jpeg": "/Hotel-react/static/media/view1.92a07c08.jpeg",
+    "static/media/view2.jpg": "/Hotel-react/static/media/view2.fedaa78f.jpg",
+    "static/media/view3.jpg": "/Hotel-react/static/media/view3.f417bf39.jpg",
+    "static/media/view4.jpg": "/Hotel-react/static/media/view4.edb8b267.jpg",
+    "static/media/view5.jpg": "/Hotel-react/static/media/view5.fd5246bb.jpg",
+    "static/media/view6.jpg": "/Hotel-react/static/media/view6.f94f7100.jpg",
+    "static/media/view7.jpg": "/Hotel-react/static/media/view7.c483714e.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f65433f3.js",
+    "static/js/2.9ef8a80c.chunk.js",
+    "static/css/main.5f361e03.chunk.css",
+    "static/js/main.092c008c.chunk.js"
+  ]
+}
