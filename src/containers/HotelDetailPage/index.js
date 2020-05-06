@@ -150,8 +150,8 @@ function HotelDetailPage(props) {
               酒店地圖
             </Typography>
             <div style={{ width: 320, height: 300 }}>
-              <Map amapkey={"2cbb42b51bcddeda26d5492226150c3c"} version="2.0" doubleClickZoom zoom={13} center={{ longitude: 114.15769, latitude: 22.28552 }}>
-                <Marker position={{ longitude: 114.15769, latitude: 22.28552 }} />
+              <Map amapkey={"2cbb42b51bcddeda26d5492226150c3c"} version="2.0" doubleClickZoom zoom={13} center={{ longitude: hotel.long, latitude: hotel.lat }}>
+                <Marker position={{ longitude: hotel.long, latitude: hotel.lat }} />
               </Map>
             </div>
           </Grid>
@@ -557,15 +557,15 @@ function HotelDetailPage(props) {
           <Grid container direction="row" className={classes.service}>
             <Grid item xs={8}>
               <div style={{ width: "100%", height: 300 }}>
-                <Map amapkey={"2cbb42b51bcddeda26d5492226150c3c"} version="2.0" doubleClickZoom zoom={13} center={{ longitude: 114.15769, latitude: 22.28552 }}>
-                  <Marker position={{ longitude: 114.15769, latitude: 22.28552 }} />
+                <Map amapkey={"2cbb42b51bcddeda26d5492226150c3c"} version="2.0" doubleClickZoom zoom={13} center={{ longitude: hotel.long, latitude: hotel.lat }}>
+                  <Marker position={{ longitude: hotel.long, latitude: hotel.lat }} />
                 </Map>
               </div>
             </Grid>
             <Grid item xs={4} style={{ padding: 10 }}>
-              <Typography variant="h6">香港尖沙咀皇悦酒店</Typography>
-              <Typography variant="h6">(Empire Hotel Kowloon－Tsim Sha Tsui)</Typography>
-              <Typography variant="subtitle1"> 尖沙咀-油尖旺尖沙咀金巴利街8號。</Typography>
+              <Typography variant="h6">{hotel.titleChi}</Typography>
+              <Typography variant="h6">{hotel.titleEn}</Typography>
+              <Typography variant="subtitle1"> {hotel.address}</Typography>
             </Grid>
           </Grid>
         </Grid>

@@ -157,6 +157,8 @@ export const hotels = [
     roomKey: true,
     district: "中西區",
     star: "5",
+    lat: 22.286577,
+    long: 114.15695,
   },
   {
     images: JWMarriottHotelViews,
@@ -174,6 +176,8 @@ export const hotels = [
     roomKey: true,
     district: "中西區",
     star: "5",
+    lat: 22.277577,
+    long: 114.166328,
   },
   {
     images: TravelodgeCentralHollywoodRoadViews,
@@ -190,6 +194,8 @@ export const hotels = [
     roomKey: true,
     district: "中西區",
     star: "3-4",
+    lat: 22.285667,
+    long: 114.147919,
   },
   {
     images: CourtyardbyMarriottHongKongViews,
@@ -207,6 +213,8 @@ export const hotels = [
     roomKey: true,
     district: "中西區",
     star: "3-4",
+    lat: 22.287995,
+    long: 114.139089,
   },
   {
     images: GrandHyattHongKongViews,
@@ -224,6 +232,8 @@ export const hotels = [
     roomKey: true,
     district: "灣仔區",
     star: "5",
+    lat: 22.281437,
+    long: 114.172149,
   },
   {
     images: RegalHongKongHotelViews,
@@ -241,6 +251,8 @@ export const hotels = [
     roomKey: true,
     district: "灣仔區",
     star: "5",
+    lat: 22.279162,
+    long: 114.186837,
   },
   {
     images: LhotelCausewayBayHarbourViews,
@@ -258,6 +270,8 @@ export const hotels = [
     roomKey: true,
     district: "灣仔區",
     star: "3-4",
+    lat: 22.283294,
+    long: 114.192849,
   },
   {
     images: EastHotelViews,
@@ -275,6 +289,8 @@ export const hotels = [
     roomKey: true,
     district: "東區",
     star: "3-4",
+    lat: 22.283158,
+    long: 114.221015,
   },
   {
     images: CaritasOswaldCheungInternationalHouseViews,
@@ -286,6 +302,8 @@ export const hotels = [
     roomKey: true,
     district: "南區",
     star: "3-4",
+    lat: 22.249632,
+    long: 114.149657,
   },
   {
     images: HongKongOceanParkMarriottHotelViews,
@@ -303,6 +321,8 @@ export const hotels = [
     roomKey: true,
     district: "南區",
     star: "3-4",
+    lat: 22.247711,
+    long: 114.175744,
   },
   {
     images: LeMéridienCyberportViews,
@@ -320,6 +340,8 @@ export const hotels = [
     roomKey: true,
     district: "南區",
     star: "5",
+    lat: 22.262034,
+    long: 114.129411,
   },
   {
     images: StanleyOrientalHotelViews,
@@ -336,6 +358,8 @@ export const hotels = [
     roomKey: true,
     district: "南區",
     star: "3-4",
+    lat: 22.218791,
+    long: 114.211194,
   },
   {
     images: BluejayResidencesViews,
@@ -347,6 +371,8 @@ export const hotels = [
     roomKey: true,
     district: "南區",
     star: "3-4",
+    lat: 22.32478,
+    long: 114.178729,
   },
   {
     images: ThePeninsulaHongKongViews,
@@ -364,6 +390,8 @@ export const hotels = [
     roomKey: true,
     district: "油尖旺區",
     star: "5",
+    lat: 22.295182,
+    long: 114.171897,
   },
   {
     images: KowloonShangrilaHotelViews,
@@ -381,6 +409,8 @@ export const hotels = [
     roomKey: true,
     district: "油尖旺區",
     star: "5",
+    lat: 22.297157,
+    long: 114.177084,
   },
   {
     images: EatonHKViews,
@@ -398,6 +428,8 @@ export const hotels = [
     roomKey: true,
     district: "油尖旺區",
     star: "3-4",
+    lat: 22.308049,
+    long: 114.171816,
   },
   {
     images: DorsettMongkokHongKongViews,
@@ -415,6 +447,8 @@ export const hotels = [
     roomKey: true,
     district: "油尖旺區",
     star: "3-4",
+    lat: 22.321283,
+    long: 114.162146,
   },
   {
     images: TheCityviewHotelViews,
@@ -432,6 +466,8 @@ export const hotels = [
     roomKey: true,
     district: "油尖旺區",
     star: "3-4",
+    lat: 22.313752,
+    long: 114.171665,
   },
   {
     images: CordisHongKongViews,
@@ -449,6 +485,8 @@ export const hotels = [
     roomKey: true,
     district: "油尖旺區",
     star: "5",
+    lat: 22.318205,
+    long: 114.168133,
   },
   {
     images: VPHotelViews,
@@ -460,6 +498,8 @@ export const hotels = [
     roomKey: true,
     district: "深水埗區",
     star: "1-2",
+    lat: 22.325569,
+    long: 114.164081,
   },
   {
     images: YHAMeiHoHouseYouthHostelViews,
@@ -477,6 +517,8 @@ export const hotels = [
     roomKey: true,
     district: "深水埗區",
     star: "3-4",
+    lat: 22.334072,
+    long: 114.163689,
   },
   {
     images: HarbourGrandKowloonViews,
@@ -493,6 +535,8 @@ export const hotels = [
     roomKey: true,
     district: "九龍城區",
     star: "5",
+    lat: 22.302747,
+    long: 114.192342,
   },
   {
     images: HarbourPlaza8DegreesViews,
@@ -510,6 +554,8 @@ export const hotels = [
     roomKey: true,
     district: "九龍城區",
     star: "3-4",
+    lat: 22.322972,
+    long: 114.190689,
   },
   {
     images: RegalOrientalHotelViews,
@@ -527,6 +573,8 @@ export const hotels = [
     roomKey: true,
     district: "九龍城區",
     star: "3-4",
+    lat: 22.329957,
+    long: 114.193047,
   },
   {
     images: MetroparkHotelKowloonViews,
@@ -544,6 +592,8 @@ export const hotels = [
     roomKey: true,
     district: "九龍城區",
     star: "3-4",
+    lat: 22.319522,
+    long: 114.175863,
   },
   {
     images: TheTenHotelViews,
@@ -555,6 +605,8 @@ export const hotels = [
     roomKey: true,
     district: "九龍城區",
     star: "3-4",
+    lat: 22.33512,
+    long: 114.176971,
   },
   {
     images: PentahotelHongKongKowloonViews,
@@ -570,6 +622,8 @@ export const hotels = [
     roomKey: true,
     district: "黃大仙區",
     star: "3-4",
+    lat: 22.337345,
+    long: 114.199633,
   },
   {
     images: LhotelelanViews,
@@ -587,6 +641,8 @@ export const hotels = [
     roomKey: true,
     district: "觀塘區",
     star: "3-4",
+    lat: 22.314187,
+    long: 114.21908,
   },
   {
     images: CrownePlazaHongKongKowloonEastViews,
@@ -603,6 +659,8 @@ export const hotels = [
     roomKey: true,
     district: "新界",
     star: "5",
+    lat: 22.308554,
+    long: 114.26013,
   },
   {
     images: CourtyardHongKongShaTinViews,
@@ -620,6 +678,8 @@ export const hotels = [
     roomKey: true,
     district: "新界",
     star: "3-4",
+    lat: 22.390698,
+    long: 114.20643,
   },
   {
     images: ApexHorizonSuitesViews,
@@ -631,6 +691,8 @@ export const hotels = [
     roomKey: true,
     district: "新界",
     star: "3-4",
+    lat: 1,
+    long: 1,
   },
   {
     images: LhotelNinaetConventionCentreViews,
@@ -648,6 +710,8 @@ export const hotels = [
     roomKey: true,
     district: "新界",
     star: "5",
+    lat: 22.368819,
+    long: 114.112688,
   },
   {
     images: GoldCoastHotelViews,
@@ -665,6 +729,8 @@ export const hotels = [
     roomKey: true,
     district: "新界",
     star: "5",
+    lat: 22.371817,
+    long: 113.989467,
   },
   {
     images: HarbourPlazaResortCityViews,
@@ -682,6 +748,8 @@ export const hotels = [
     roomKey: true,
     district: "新界",
     star: "3-4",
+    lat: 22.458117,
+    long: 114.002991,
   },
   {
     images: NovotelCitygateHongKongHotelViews,
@@ -699,6 +767,8 @@ export const hotels = [
     roomKey: true,
     district: "離島區",
     star: "3-4",
+    lat: 22.291186,
+    long: 113.942377,
   },
   {
     images: HongKongDisneylandHotelViews,
@@ -717,6 +787,8 @@ export const hotels = [
     roomKey: true,
     district: "離島區",
     star: "5",
+    lat: 22.308393,
+    long: 114.04397,
   },
   {
     images: HongKongSkyCityMarriottHotelViews,
@@ -734,6 +806,8 @@ export const hotels = [
     roomKey: true,
     district: "離島區",
     star: "5",
+    lat: 22.319127,
+    long: 113.943715,
   },
   {
     images: WarwickHotelCheungChauViews,
@@ -751,5 +825,7 @@ export const hotels = [
     roomKey: true,
     district: "離島區",
     star: "3-4",
+    lat: 22.207763,
+    long: 114.032224,
   },
 ];
