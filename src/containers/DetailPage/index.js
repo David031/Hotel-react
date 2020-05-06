@@ -15,18 +15,11 @@ function DetailPage() {
   const location = useLocation();
   const history = useHistory();
   const [district, setDistrict] = React.useState(location.state.imagekey);
-  const [hotel, sethotel] = React.useState(
-    hotels.map((h) => {
-      if (h.district == district) {
-        return h;
-      }
-    })
-  );
-
+  const [hotel, sethotel] = React.useState(hotels.filter((h) => h.district === district));
   return (
     <Layout title={`酒店選擇 : ${district}`}>
       <Grid container alignContent="flex-start" alignItems="flex-start" justify="space-around">
-        <Grid item>{hotel[0] ? hotel.map((h) => (h ? <HotelCard district={district} hotel={h} /> : null)) : <HotelCard hotelNotFound />}</Grid>
+        <Grid item>{hotel[0] ? hotel.map((h) => (h ? <HotelCard key={h.titleChi} district={district} hotel={h} /> : null)) : <HotelCard hotelNotFound />}</Grid>
         <Grid item>
           <HotelListController hotels={hotels} sethotel={sethotel} setDistrict={setDistrict} districts={districts} district={district} />
         </Grid>

@@ -10,7 +10,6 @@ import { payIcon } from "../PaymentPage/constants";
 import { Map } from "react-amap";
 import Marker from "react-amap/lib/marker";
 import { useHistory, useLocation } from "react-router-dom";
-import empirePrestigeTsimShaTsuiView1 from "../../images/tsim-sha-tsui/hotel-images/empire-prestige-tsim-sha-tsui/view1.jpg";
 
 const useStyle = makeStyles((theme) => ({
   root: {
@@ -106,10 +105,13 @@ function HotelDetailPage(props) {
             </Button>
           </Grid>
         </Grid>
-        <Grid container className={classes.content} justify="center">
-          {hotel.images.map((img, index) => (
-            <img key={index} src={img} alt={index} style={{ margin: 5 }} />
-          ))}
+        <Grid container direction="row" className={classes.content} justify="center">
+          <Grid item xs={5} style={{ height: 425 }}>
+            <img src={hotel.images[0]} alt="top1" style={{ padding: 5, height: "97%", width: "98%" }} />
+          </Grid>
+          <Grid item xs={7}>
+            {hotel.images.map((img, index) => (index > 0 ? <img key={index} src={img} alt={index} style={{ padding: 5, height: 200, width: 200 }} /> : null))}
+          </Grid>
         </Grid>
         <Grid container direction="row" className={classes.content}>
           <Grid item xs={8} container direction="column" alignContent="flex-start" alignItems="flex-start" justify="flex-start">
@@ -212,22 +214,31 @@ function HotelDetailPage(props) {
         </Grid>
         <Grid container direction="row" className={classes.content}>
           <Grid item xs={3}>
-            <img src={empirePrestigeTsimShaTsuiView1} alt="empirePrestigeTsimShaTsuiView1" width="90%" />
+            <img src={hotel.images[hotel.images.length - 2]} alt="room" width="90%" />
             <Typography style={{ marginTop: 15 }}>城市景觀客房</Typography>
           </Grid>
           <Grid item container direction="column" xs={9}>
             <HotelRoomCard
+              roomKey={hotel.roomKey}
               price={hotel.price}
               handleClick={handleClick({ price: hotel.price, startDate: dayjs(startDate).format("DD/MM/YYYY"), endDate: dayjs(endDate).format("DD/MM/YYYY"), people: people, room: room, day: endDate.diff(startDate, "d") })}
             />
             <HotelRoomCard
-              price={hotel.price + 10}
+              roomKey={!hotel.roomKey}
+              price={hotel.price + 58}
               handleClick={handleClick({ price: hotel.price + 10, startDate: dayjs(startDate).format("DD/MM/YYYY"), endDate: dayjs(endDate).format("DD/MM/YYYY"), people: people, room: room, day: endDate.diff(startDate, "d") })}
             />
           </Grid>
         </Grid>
-        <Grid container className={classes.content} style={{ height: 500 }}>
-          <Typography variant="h6">酒店簡介</Typography>
+        <Grid container className={classes.content} direction="column">
+          <Typography variant="h6" className={classes.serviceLabelTitle}>
+            酒店簡介
+          </Typography>
+          {hotel.intro.map((i) => (
+            <Typography key={i} variant="subtitle2" style={{ marginBottom: 10 }}>
+              {i}
+            </Typography>
+          ))}
         </Grid>
         <Grid container className={classes.content} alignContent="flex-start">
           <Typography variant="h6" className={classes.serviceLabelTitle}>

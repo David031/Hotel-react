@@ -4,7 +4,7 @@ import { Grid, Typography, Button, Card, TextField } from "@material-ui/core";
 import { useHistory, useLocation } from "react-router-dom";
 import Layout from "../../components/Layout";
 import { orderReminder } from "./constants";
-import empirePrestigeTsimShaTsuiView1 from "../../images/tsim-sha-tsui/hotel-images/empire-prestige-tsim-sha-tsui/view1.jpg";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     padding: 15,
@@ -194,7 +194,7 @@ export default function HotelOrderPage() {
             <Grid container direction="column">
               <Grid container item direction="row">
                 <Grid item xs={4} style={{ padding: 10 }}>
-                  <img src={empirePrestigeTsimShaTsuiView1} alt="empirePrestigeTsimShaTsuiView1" style={{ width: "100%" }} />
+                  <img src={hotel.images[0]} alt="hotel" style={{ width: "100%" }} />
                 </Grid>
                 <Grid item xs={8} style={{ padding: 10 }}>
                   <Typography variant="subtitle1">{hotel.titleChi}</Typography>

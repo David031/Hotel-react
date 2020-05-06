@@ -34,6 +34,9 @@ function PaymentDonePage() {
     <Layout title="支付成功">
       <Grid container justify="center" alignItems="center" alignContent="center" className={classes.root}>
         <Grid item container justify="center" direction="column" alignItems="center" alignContent="center">
+          <Typography variant="h6" className={classes.header} style={{ width: 500 }}>
+            訂單編號： f5669f07-2b89-409b-9c17-9e6e2303d350
+          </Typography>
           <Typography variant="h1" className={classes.header} style={{ width: 400 }}>
             支付完成
           </Typography>

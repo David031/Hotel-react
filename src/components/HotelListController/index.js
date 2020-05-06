@@ -26,15 +26,10 @@ function HotelListController({ hotels, sethotel, setDistrict, districts, distric
   const history = useHistory();
   const handleClick = (newDistrict) => (event) => {
     setDistrict(newDistrict);
-    const x = hotels.filter((h) => h.district === newDistrict);
-
-    console.log("district", x);
-    sethotel(x);
+    sethotel(hotels.filter((h) => h.district === newDistrict));
   };
   const handleStarClick = (newStar) => (event) => {
-    const x = hotels.filter((h) => h.star === newStar && h.district == district);
-    console.log("star", x);
-    sethotel(x);
+    sethotel(hotels.filter((h) => h.star === newStar && h.district == district));
   };
   return (
     <Card className={classes.root}>
