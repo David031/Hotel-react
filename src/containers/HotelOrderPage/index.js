@@ -35,7 +35,7 @@ export default function HotelOrderPage() {
   const totalPrice = totalRoomPrice + totalRoomPrice * 0.1;
 
   if (!district || !hotel || !order) {
-    history.push("/error");
+    history.push("/Hotel-react/error");
   }
   var rows = [];
   for (let index = 0; index < order.people; index++) {
@@ -44,7 +44,7 @@ export default function HotelOrderPage() {
   const [roomPeople, setRoomPeople] = React.useState(rows.map((r) => ({ lastName: "", firstName: "" })));
   const [contact, setContact] = React.useState({ email: "", mobile: "" });
   const handleClick = () => {
-    history.push("/detail/hotel/order/pay", { order: order, price: totalPrice, hotel: hotel, contact: contact, roomPeople: roomPeople });
+    history.push("/Hotel-react/detail/hotel/order/pay", { order: order, price: totalPrice, hotel: hotel, contact: contact, roomPeople: roomPeople });
   };
   const handleLastNameChange = (index) => (event) => {
     setRoomPeople(

@@ -60,10 +60,10 @@ function Layout({ children, title }) {
   const handleChange = (newValue) => (event) => {
     switch (newValue) {
       case "Home":
-        history.push("/home");
+        history.push("/Hotel-react/home");
         break;
       case "Account":
-        history.push("/login");
+        history.push("/Hotel-react/login");
         break;
       default:
         break;

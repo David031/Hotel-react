@@ -7,7 +7,7 @@ import { useHistory } from "react-router-dom";
 function HomePage() {
   const history = useHistory();
   const handleClick = (newValue) => (event) => {
-    history.push("/detail", { imagekey: newValue });
+    history.push("/Hotel-react/detail", { imagekey: newValue });
   };
   return (
     <Layout title="區域選擇">

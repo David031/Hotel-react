@@ -58,7 +58,7 @@ export default function TopBar({ handleChange }) {
   const classes = useStyles();
   const history = useHistory();
   const handleClick = (newValue) => (event) => {
-    history.push("/detail/hotel", { hotel: newValue.hotel, district: newValue.district });
+    history.push("/Hotel-react/detail/hotel", { hotel: newValue.hotel, district: newValue.district });
   };
   return (
     <Grid container className={classes.topBar} direction="column">

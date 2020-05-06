@@ -31,7 +31,7 @@ function PaymentPage() {
   const contact = location.state.contact;
   const totalPrice = location.state.price;
   const handleClick = () => {
-    history.push("/detail/hotel/order/pay/done");
+    history.push("/Hotel-react/detail/hotel/order/pay/done");
   };
   return (
     <Layout title="支付訂單">

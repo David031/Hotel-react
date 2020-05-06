@@ -71,10 +71,10 @@ function HotelDetailPage(props) {
   const district = location.state.district;
   const hotel = location.state.hotel;
   if (!district || !hotel) {
-    history.push("/error");
+    history.push("/Hotel-react/error");
   }
   const handleClick = (order) => () => {
-    history.push("/detail/hotel/order", { order: order, hotel: hotel, district: district });
+    history.push("/Hotel-react/detail/hotel/order", { order: order, hotel: hotel, district: district });
   };
   const handlePeopleChange = (event) => {
     setPeople(event.target.value);

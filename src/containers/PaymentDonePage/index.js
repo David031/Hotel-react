@@ -28,7 +28,7 @@ function PaymentDonePage() {
   const classes = useStyles();
   const history = useHistory();
   const handleBackToHome = () => {
-    history.push("/home");
+    history.push("/Hotel-react/home");
   };
   return (
     <Layout title="支付成功">

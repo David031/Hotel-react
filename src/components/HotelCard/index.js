@@ -30,7 +30,7 @@ function HotelCard({ district, hotel, hotelNotFound }) {
   const classes = useStyle();
   const history = useHistory();
   const handleClick = () => {
-    history.push("/detail/hotel", { hotel: hotel, district: district });
+    history.push("/Hotel-react/detail/hotel", { hotel: hotel, district: district });
   };
   return !hotelNotFound ? (
     <Card className={classes.root}>

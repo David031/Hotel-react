@@ -57,7 +57,7 @@ export default function LoginPage() {
   const classes = useStyles();
   const history = useHistory();
   const handleChange = (event) => {
-    history.push("/account");
+    history.push("/Hotel-react/account");
   };
   return (
     <div className={classes.root}>
