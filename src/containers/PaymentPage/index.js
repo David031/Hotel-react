@@ -58,7 +58,7 @@ function PaymentPage() {
                 fullWidth
               />
               <TextField
-                label="CSV"
+                label="CVV"
                 type="number"
                 margin="normal"
                 InputLabelProps={{
