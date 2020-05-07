@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "57ccf1cef337a6b860325b7ee2685de7",
+    "revision": "2c749656200e333cf3d4f56fe4f9673c",
     "url": "/Hotel-react/index.html"
   },
   {
-    "revision": "0ba8774c7bb07dcd4acb",
+    "revision": "8960a54fb3a1c127c683",
     "url": "/Hotel-react/static/css/main.5f361e03.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Hotel-react/static/js/2.9ef8a80c.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "0ba8774c7bb07dcd4acb",
-    "url": "/Hotel-react/static/js/main.515d9d00.chunk.js"
+    "revision": "8960a54fb3a1c127c683",
+    "url": "/Hotel-react/static/js/main.581a4ea4.chunk.js"
   },
   {
     "revision": "3c3aa3c48d6ac7946b7b",
