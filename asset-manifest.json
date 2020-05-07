@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/Hotel-react/static/css/main.5f361e03.chunk.css",
-    "main.js": "/Hotel-react/static/js/main.1d6b0cba.chunk.js",
-    "main.js.map": "/Hotel-react/static/js/main.1d6b0cba.chunk.js.map",
+    "main.js": "/Hotel-react/static/js/main.8cd7acdf.chunk.js",
+    "main.js.map": "/Hotel-react/static/js/main.8cd7acdf.chunk.js.map",
     "runtime-main.js": "/Hotel-react/static/js/runtime-main.f65433f3.js",
     "runtime-main.js.map": "/Hotel-react/static/js/runtime-main.f65433f3.js.map",
-    "static/js/2.9ef8a80c.chunk.js": "/Hotel-react/static/js/2.9ef8a80c.chunk.js",
-    "static/js/2.9ef8a80c.chunk.js.map": "/Hotel-react/static/js/2.9ef8a80c.chunk.js.map",
+    "static/js/2.254e95eb.chunk.js": "/Hotel-react/static/js/2.254e95eb.chunk.js",
+    "static/js/2.254e95eb.chunk.js.map": "/Hotel-react/static/js/2.254e95eb.chunk.js.map",
     "index.html": "/Hotel-react/index.html",
-    "precache-manifest.8ec5f85c9ffccd212356cfc36a3aecb7.js": "/Hotel-react/precache-manifest.8ec5f85c9ffccd212356cfc36a3aecb7.js",
+    "precache-manifest.45670c7213488197f5b6989f3427e9b7.js": "/Hotel-react/precache-manifest.45670c7213488197f5b6989f3427e9b7.js",
     "service-worker.js": "/Hotel-react/service-worker.js",
     "static/css/main.5f361e03.chunk.css.map": "/Hotel-react/static/css/main.5f361e03.chunk.css.map",
-    "static/js/2.9ef8a80c.chunk.js.LICENSE.txt": "/Hotel-react/static/js/2.9ef8a80c.chunk.js.LICENSE.txt",
+    "static/js/2.254e95eb.chunk.js.LICENSE.txt": "/Hotel-react/static/js/2.254e95eb.chunk.js.LICENSE.txt",
     "static/media/view1.jpg": "/Hotel-react/static/media/view1.fedc6403.jpg",
     "static/media/view1.jpeg": "/Hotel-react/static/media/view1.92a07c08.jpeg",
     "static/media/view2.jpg": "/Hotel-react/static/media/view2.fedaa78f.jpg",
@@ -23,8 +23,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.f65433f3.js",
-    "static/js/2.9ef8a80c.chunk.js",
+    "static/js/2.254e95eb.chunk.js",
     "static/css/main.5f361e03.chunk.css",
-    "static/js/main.1d6b0cba.chunk.js"
+    "static/js/main.8cd7acdf.chunk.js"
   ]
 }
