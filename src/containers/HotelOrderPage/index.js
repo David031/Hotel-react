@@ -32,8 +32,9 @@ export default function HotelOrderPage() {
   const hotel = location.state.hotel;
   const order = location.state.order;
   const totalRoomPrice = order.room * order.price * order.day;
-  const totalPrice = totalRoomPrice + totalRoomPrice * 0.1;
-
+  const subPrice = totalRoomPrice + totalRoomPrice * 0.1;
+  const discount = hotel.titleChi === "半島酒店" && subPrice > 10000 ? 10 : 0;
+  const totalPrice = subPrice - discount;
   if (!district || !hotel || !order) {
     history.push("/Hotel-react/error");
   }
@@ -256,6 +257,14 @@ export default function HotelOrderPage() {
                   </Typography>
                   <Typography variant="caption" className={classes.text}>
                     HK${totalRoomPrice * 0.1}
+                  </Typography>
+                </Grid>
+                <Grid item container direction="row" justify="space-between">
+                  <Typography variant="caption" className={classes.text}>
+                    折扣
+                  </Typography>
+                  <Typography variant="caption" className={classes.text}>
+                    HK${discount}
                   </Typography>
                 </Grid>
                 <Grid item container direction="row" justify="space-between">
