@@ -49,7 +49,6 @@ const PentahotelHongKongKowloonViews = importAll(require.context("../images/Wong
 
 const LhotelelanViews = importAll(require.context("../images/KwunTongDistrict/hotel-images/L'hotelelan", false, /\.(png|jpe?g|svg)$/));
 
-const ApexHorizonSuitesViews = importAll(require.context("../images/NT/hotel-images/ApexHorizonSuites", false, /\.(png|jpe?g|svg)$/));
 const CourtyardHongKongShaTinViews = importAll(require.context("../images/NT/hotel-images/CourtyardHongKongShaTin", false, /\.(png|jpe?g|svg)$/));
 const CrownePlazaHongKongKowloonEastViews = importAll(require.context("../images/NT/hotel-images/CrownePlazaHongKongKowloonEast", false, /\.(png|jpe?g|svg)$/));
 const GoldCoastHotelViews = importAll(require.context("../images/NT/hotel-images/GoldCoastHotel", false, /\.(png|jpe?g|svg)$/));
@@ -680,19 +679,6 @@ export const hotels = [
     star: "3-4",
     lat: 22.390698,
     long: 114.20643,
-  },
-  {
-    images: ApexHorizonSuitesViews,
-    titleChi: "雍澄軒",
-    titleEn: "Apex Horizon Suites",
-    address: "葵涌和宜合道33號",
-    intro: ["Apex Horizon Suites是位於葵涌的家庭式賓館。", "憑藉其獨特的建築特色和廣泛的會所設施，Apex Horizon Suites為您提供卓越的城市生活主張。"],
-    price: 600 * 3,
-    roomKey: true,
-    district: "新界",
-    star: "3-4",
-    lat: 1,
-    long: 1,
   },
   {
     images: LhotelNinaetConventionCentreViews,
